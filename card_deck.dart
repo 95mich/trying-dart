@@ -1,6 +1,7 @@
 void main(){
   var deck = new Deck();
-  print(deck);
+  deck.shuffle();
+  print(deck.cardsWithSuit('Diamonds'));
 }
 
 class Deck{
@@ -21,6 +22,22 @@ class Deck{
   
   toString(){
     return cards.toString();
+  }
+  
+  shuffle(){
+    cards.shuffle();
+  }
+  
+  cardsWithSuit(String suit){
+    
+    /** ANOTHER WAY
+    return cards.where((card) {
+      return card.suit == suit;
+    });
+    **************/
+    
+    return cards.where((card) => card.suit == suit);
+    
   }
 }
 
