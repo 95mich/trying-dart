@@ -1,7 +1,9 @@
 void main(){
   var deck = new Deck();
-  deck.shuffle();
-  print(deck.cardsWithSuit('Diamonds'));
+  
+  print(deck);
+  print(deck.deal(5));
+  print(deck);
 }
 
 class Deck{
@@ -37,7 +39,13 @@ class Deck{
     **************/
     
     return cards.where((card) => card.suit == suit);
+  }
+  
+  deal(int handSize){
+    var hand = cards.sublist(0, handSize);
+    cards = cards.sublist(handSize);
     
+    return hand;
   }
 }
 
