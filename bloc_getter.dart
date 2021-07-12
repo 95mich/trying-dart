@@ -13,6 +13,7 @@ void main() {
 class Bloc {
   final emailController = StreamController<String>();
   
+  //GETTER TO MAKE IT EASIER TO CALL
   get changeEmail => emailController.sink.add;
   get email => emailController.stream;
 }
